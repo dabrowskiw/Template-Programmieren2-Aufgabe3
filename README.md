@@ -27,7 +27,7 @@ Das bedeutet refactoring - Sie müssen Ihren existierenden Code an die neuen Anf
 
 ### Files
 
-Erstellen Sie zunächst in dem neuen package ```org.htw.prog2.aufgabe1.readers``` neue Klassen für für die unterschiedlichen möglichen Dateien. Das bräuchten Sie zwar nicht für den einen Dateityp, aber Sie vermuten, dass da noch mehr Veränderungen eingebracht werden könnten, also nehmen Sie die Mutationspattern auch direkt in das refactoring auf:
+Erstellen Sie zunächst in dem neuen package ```org.htw.prog2.aufgabe1.files``` neue Klassen für für die unterschiedlichen möglichen Dateien. Das bräuchten Sie zwar nicht für den einen Dateityp, aber Sie vermuten, dass da noch mehr Veränderungen eingebracht werden könnten, also nehmen Sie die Mutationspattern auch direkt in das refactoring auf:
 
 * Ein Interface ```HIVFile```. Dieses Interface definiert keine Methoden, es handelt sich um das Marker Interface-Pattern - es erlaubt uns, in den nächsten Schritten zu klarifizieren, mit welchen Klassen wir es zu tun haben.
 * Eine Klasse ```SequenceFile```, die die Informationen eines Sequenz-files halten wird und die von ```HIVFile``` ableitet. Sie soll neben einem leeren Constructor die folgenden Methoden (z.T. refaktorisiert aus ```SeqFile``` der letzten Woche) enthalten:
