@@ -31,7 +31,7 @@ Erstellen Sie zunächst in dem neuen package ```org.htw.prog2.aufgabe1.files``` 
 
 * Ein Interface ```HIVFile```. Dieses Interface definiert keine Methoden, es handelt sich um das Marker Interface-Pattern - es erlaubt uns, in den nächsten Schritten zu klarifizieren, mit welchen Klassen wir es zu tun haben.
 * Eine Klasse ```SequenceFile```, die die Informationen eines Sequenz-files halten wird und die von ```HIVFile``` ableitet. Sie soll neben einem leeren Constructor die folgenden Methoden (z.T. refaktorisiert aus ```SeqFile``` der letzten Woche) enthalten:
-    * ```addSequence(String sequence)```: Fügt eine neue Sequenz der Sequenzliste hinzu
+    * ```public addSequence(String sequence)```: Fügt eine neue Sequenz der Sequenzliste hinzu
     * ```public HashSet<String> getSequences()```: Gibt die gespeicherten Sequenzen zurück
     * ```public String getFirstSequence()```: Gibt die erste hinzugefügte Sequenz zurück
     * ```public int getNumberOfSequences()```: Gibt die Anzahl der gespeicherten Sequenzen zurück
