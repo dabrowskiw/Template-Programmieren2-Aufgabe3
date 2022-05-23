@@ -59,8 +59,7 @@ class HIVDiagnosticsTest {
     @Test
     void main() {
         HIVDiagnostics.main("-m HIVMutationPatternsPI.csv -d ProteaseInhibitor -r protease_reference.fasta -p protease_sequences.fasta".split(" "));
-        assertEquals("Eingelesene Mutationen: 825\n" +
-                "Länge der eingelesenen Referenzsequenz: 99 Aminosäuren\n" +
-                "Anzahl der eingelesenen Patientensequenzen: 1000", outContent.toString().strip());
-    }
+        assertEquals(new String[] {"Eingelesene Mutationen: 825",
+                "Länge der eingelesenen Referenzsequenz: 99 Aminosäuren",
+                "Anzahl der eingelesenen Patientensequenzen: 1000"}, outContent.toString().strip().replace("\\r", "").split("\\n"));    }
 }
