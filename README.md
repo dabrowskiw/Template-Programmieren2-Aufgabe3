@@ -19,7 +19,7 @@ GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
 **CCC*+))!''*(%%++(***)%)(%%>>+**5>>%%).1***-5''))*CCF>>CCCC
 ```
 
-Der Sequenzhaeder beginnt nun nicht mehr mit ```>``` sondern mit ```@```. Zudem ist nun nicht mehr nur eine Aminosäuresequenz vorhanden, sondern nach der Sequenzinformation kommt eine Trennzeile, die mit ```+``` beginnt (optional kann nach dem ```+``` nochmal der Sequenzname wiederholt werden), und danach kommt eine weitere Sequenz, die für jede Base aus der Aminisäuresequenz eine Qualität angibt. Diese Informationen werden nicht für die folgenden Analysen benötigt, können also verworfen werden (zum Hintergrund: je nach Variante des FASTQ-Formats wird, um die Qualität zu berechnen, ein offset von dem ASCII-Wert der Qualität abgezogen, um auf einen Qualitätswert von 0-64 zu kommen, der die Fehlerwahrscheinlichkeit der jeweiligen Base bezeichnet).
+Der Sequenzhaeder beginnt nun nicht mehr mit ```>``` sondern mit ```@```. Zudem ist nun nicht mehr nur eine Aminosäuresequenz vorhanden, sondern nach der Sequenzinformation kommt eine Trennzeile, die mit ```+``` beginnt (optional kann nach dem ```+``` nochmal der Sequenzname wiederholt werden), und danach kommt eine weitere Sequenz, die für jede Base aus der Aminosäuresequenz eine Qualität angibt. Diese Informationen werden nicht für die folgenden Analysen benötigt, können also verworfen werden (zum Hintergrund: je nach Variante des FASTQ-Formats wird, um die Qualität zu berechnen, ein offset von dem ASCII-Wert der Qualität abgezogen, um auf einen Qualitätswert von 0-64 zu kommen, der die Fehlerwahrscheinlichkeit der jeweiligen Base bezeichnet).
 
 ## Die Reaktion
 
