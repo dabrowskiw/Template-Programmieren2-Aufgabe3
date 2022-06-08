@@ -19,7 +19,7 @@ GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
 **CCC*+))!''*(%%++(***)%)(%%>>+**5>>%%).1***-5''))*CCF>>CCCC
 ```
 
-Der Sequenzhaeder beginnt nun nicht mehr mit ```>``` sondern mit ```@```. Zudem ist nun nicht mehr nur eine Zeile Sequenzinformation vorhanden, sondern nach der Sequenzinformation kommt eine Trennzeile, die mit ```+``` beginnt (optional kann nach dem ```+``` nochmal der Sequenzname wiederholt werden), und danach kommt eine weitere Zeile die für jede Base aus der Sequenz eine Qualität angibt. Diese Informationen werden nicht für die folgenden Analysen benötigt, können also verworfen werden (zum Hintergrund: je nach Variante des FASTQ-Formats wird, um die Qualität zu berechnen, ein offset von dem ASCII-Wert der Qualität abgezogen, um auf einen Qualitätswert von 0-64 zu kommen, der die Fehlerwahrscheinlichkeit der jeweiligen Base bezeichnet).
+Der Sequenzhaeder beginnt nun nicht mehr mit ```>``` sondern mit ```@```. Zudem ist nun nicht mehr nur eine Aminosäuresequenz vorhanden, sondern nach der Sequenzinformation kommt eine Trennzeile, die mit ```+``` beginnt (optional kann nach dem ```+``` nochmal der Sequenzname wiederholt werden), und danach kommt eine weitere Sequenz, die für jede Base aus der Aminosäuresequenz eine Qualität angibt. Diese Informationen werden nicht für die folgenden Analysen benötigt, können also verworfen werden (zum Hintergrund: je nach Variante des FASTQ-Formats wird, um die Qualität zu berechnen, ein offset von dem ASCII-Wert der Qualität abgezogen, um auf einen Qualitätswert von 0-64 zu kommen, der die Fehlerwahrscheinlichkeit der jeweiligen Base bezeichnet).
 
 ## Die Reaktion
 
@@ -31,7 +31,7 @@ Erstellen Sie zunächst in dem neuen package ```org.htw.prog2.aufgabe1.files``` 
 
 * Ein Interface ```HIVFile```. Dieses Interface definiert keine Methoden, es handelt sich um das Marker Interface-Pattern - es erlaubt uns, in den nächsten Schritten zu klarifizieren, mit welchen Klassen wir es zu tun haben.
 * Eine Klasse ```SequenceFile```, die die Informationen eines Sequenz-files halten wird und die von ```HIVFile``` ableitet. Sie soll neben einem leeren Constructor die folgenden Methoden (z.T. refaktorisiert aus ```SeqFile``` der letzten Woche) enthalten:
-    * ```addSequence(String sequence)```: Fügt eine neue Sequenz der Sequenzliste hinzu
+    * ```public addSequence(String sequence)```: Fügt eine neue Sequenz der Sequenzliste hinzu
     * ```public HashSet<String> getSequences()```: Gibt die gespeicherten Sequenzen zurück
     * ```public String getFirstSequence()```: Gibt die erste hinzugefügte Sequenz zurück
     * ```public int getNumberOfSequences()```: Gibt die Anzahl der gespeicherten Sequenzen zurück
@@ -40,7 +40,7 @@ Erstellen Sie zunächst in dem neuen package ```org.htw.prog2.aufgabe1.files``` 
     * ```public LinkedList<String> getDrugs()```: Gibt die gespeicherten Medikamentnamen zurück
     * ```public void addMutation(Mutation variant)```: Fügt zur Liste der gespeicherten Mutationen eine neue Mutation hinzu
     * ```public LinkedList<Mutation> getMutations()```: Gibt die gespeicherten Mutationen zurück
-    * ```public int getNumberOfMutations()```: Gibt die Liste der gespeicherten Mutationen zurück
+    * ```public int getNumberOfMutations()```: Gibt die Anzahl der gespeicherten Mutationen zurück
     
 Es ergibt sich das folgende Vererbungsschema zwischen den Dateien:
 
