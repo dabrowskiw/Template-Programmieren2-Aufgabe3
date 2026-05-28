@@ -3,18 +3,18 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'org.htw.prog2.aufgabe1.HIVDiagnostics'
+application {
+    mainClass = 'org.htw.prog2.aufgabe1.HIVDiagnostics'
+}
 
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 run {
-    args '-m data/HIVMutationPatternsPI.csv -d ProteaseInhibitor -r data/protease_reference.fasta -p data/protease_sequences.fasta'.split(" ")
-}
-
-test{
-    workingDir = new File('data/')
+    args '-m data/HIVMutationPatternsPI.csv -d ProteaseInhibitor -r data/protease_reference.fasta'.split(" ")
 }
 
 group 'org.htw.prog2'
@@ -41,6 +41,7 @@ sourceSets {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'commons-cli:commons-cli:1.4'
 }
 
